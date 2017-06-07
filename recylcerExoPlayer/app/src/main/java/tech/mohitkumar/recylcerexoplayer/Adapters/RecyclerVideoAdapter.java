@@ -96,6 +96,8 @@ public class RecyclerVideoAdapter extends RecyclerView.Adapter<RecyclerVideoAdap
         holder.itemView.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
             @Override
             public void onViewAttachedToWindow(View v) {
+                //CustomExoPlayerView customExoPlayerView = (CustomExoPlayerView) v.findViewById(R.id.player_view);
+                //customExoPlayerView.controller.dispatchKeyEvent(KeyEvent.KEYCODE_MEDIA_PLAY);
                 holder.player.setPlayWhenReady(shouldAutoPlay);
             }
 
@@ -111,6 +113,12 @@ public class RecyclerVideoAdapter extends RecyclerView.Adapter<RecyclerVideoAdap
     @Override
     public void onDetachedFromRecyclerView(RecyclerView recyclerView) {
         super.onDetachedFromRecyclerView(recyclerView);
+    }
+
+    @Override
+    public void onViewAttachedToWindow(RecyclerViewHolder holder) {
+        super.onViewAttachedToWindow(holder);
+
     }
 
     @Override
