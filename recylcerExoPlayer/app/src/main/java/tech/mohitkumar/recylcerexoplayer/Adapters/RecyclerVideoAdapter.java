@@ -93,6 +93,7 @@ public class RecyclerVideoAdapter extends RecyclerView.Adapter<RecyclerVideoAdap
         MergingMediaSource mergedSource = new MergingMediaSource(mediaSource, subtitleSource);
         holder.player.prepare(mergedSource);
 
+
         holder.itemView.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
             @Override
             public void onViewAttachedToWindow(View v) {

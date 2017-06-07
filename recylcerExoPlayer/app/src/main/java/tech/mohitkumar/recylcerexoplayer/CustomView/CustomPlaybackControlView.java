@@ -50,7 +50,7 @@ public class CustomPlaybackControlView extends FrameLayout {
     public static final int DEFAULT_REWIND_MS = 5000;
     public static final int DEFAULT_SHOW_TIMEOUT_MS = 5000;
 
-    private static final int PROGRESS_BAR_MAX = 1000;
+    public static final int PROGRESS_BAR_MAX = 1000;
     private static final long MAX_POSITION_FOR_SEEK_TO_PREVIOUS = 3000;
 
     private final CustomPlaybackControlView.ComponentListener componentListener;
@@ -355,13 +355,13 @@ public class CustomPlaybackControlView extends FrameLayout {
                 : formatter.format("%02d:%02d", minutes, seconds).toString();
     }
 
-    private int progressBarValue(long position) {
+    public int progressBarValue(long position) {
         long duration = player == null ? C.TIME_UNSET : player.getDuration();
         return duration == C.TIME_UNSET || duration == 0 ? 0
                 : (int) ((position * PROGRESS_BAR_MAX) / duration);
     }
 
-    private long positionValue(int progress) {
+    public long positionValue(int progress) {
         long duration = player == null ? C.TIME_UNSET : player.getDuration();
         return duration == C.TIME_UNSET ? 0 : ((duration * progress) / PROGRESS_BAR_MAX);
     }
