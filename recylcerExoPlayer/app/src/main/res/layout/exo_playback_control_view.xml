@@ -12,47 +12,46 @@
 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="56dp"
-    android:layout_gravity="bottom"
-    android:background="#fff"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
     android:orientation="vertical"
-    android:layoutDirection="ltr">
+    >
 
-        <TextView
-            android:id="@+id/time_current"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:layout_centerVertical="true"
-            android:paddingStart="16dp"
-            android:text="00:00"
-            android:paddingEnd="4dp"
-            android:textColor="#000"/>
-
-
-        <SeekBar
-            android:id="@+id/mediacontroller_progress"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="2dp"
-            android:layout_toRightOf="@id/time_current"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/play"
-            android:maxHeight="2dp"
-            android:thumbOffset="2dp"
-            android:progressDrawable="@drawable/progressbar"
-            android:thumb="@drawable/progressbar_thumb" />
+            android:layout_height="56dp"
+            android:layout_gravity="bottom"
+            android:background="#fff"
+            android:padding="16dp"
+            android:layout_alignParentBottom="true"
+            >
+                <TextView
+                    android:id="@+id/time_current"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:text="00:00"
+                    android:textColor="#000"
+                    />
 
 
+                <SeekBar
+                    android:id="@+id/mediacontroller_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="2dp"
+                    android:maxHeight="2dp"
+                    android:thumbOffset="2dp"
+                    android:progressDrawable="@drawable/progressbar"
+                    android:thumb="@drawable/progressbar_thumb" />
 
+        </LinearLayout>
         <ImageView
             android:id="@+id/play"
-            android:layout_height="36dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="16dp"
-            android:layout_width="36dp" />
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:layout_width="100dp" />
 
 </RelativeLayout>
 

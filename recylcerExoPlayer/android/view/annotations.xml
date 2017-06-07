@@ -1,0 +1,5 @@
+<root>
+    <item name='android.view.KeyEvent KEYCODE_MEDIA_PAUSE'>
+        <annotation name='java.lang.Deprecated' />
+    </item>
+</root>

@@ -44,9 +44,10 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        arraylist.add("http://playertest.longtailvideo.com/adaptive/bbbfull/bbbfull.m3u8");
         arraylist.add("https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8");
-        arraylist.add("http://playertest.longtailvideo.com/adaptive/bbbfull/bbbfull.m3u8");
+        arraylist.add("https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8");
+        arraylist.add("https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8");
+        arraylist.add("https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8");
         arraylist.add("https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8");
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view1);

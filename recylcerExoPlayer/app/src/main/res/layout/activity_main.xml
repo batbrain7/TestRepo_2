@@ -6,6 +6,7 @@
     android:focusable="true"
     android:layout_height="match_parent"
     android:keepScreenOn="true"
+    android:background="#000"
     tools:context="tech.mohitkumar.recylcerexoplayer.MainActivity">
 
     <android.support.v7.widget.RecyclerView

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.SystemClock;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +29,10 @@ import java.util.Locale;
  */
 
 public class CustomPlaybackControlView extends FrameLayout {
+
+    public void dispatchKeyEvent(int keycodeMediaPause) {
+        player.setPlayWhenReady(false);
+    }
 
     /**
      * Listener to be notified about changes of the visibility of the UI control.
@@ -111,7 +116,6 @@ public class CustomPlaybackControlView extends FrameLayout {
         formatBuilder = new StringBuilder();
         formatter = new Formatter(formatBuilder, Locale.getDefault());
         componentListener = new CustomPlaybackControlView.ComponentListener();
-
         LayoutInflater.from(context).inflate(R.layout.exo_playback_control_view, this);
         timeCurrent = (TextView) findViewById(R.id.time_current);
         progressBar = (SeekBar) findViewById(R.id.mediacontroller_progress);
@@ -254,14 +258,19 @@ public class CustomPlaybackControlView extends FrameLayout {
         updateProgress();
     }
 
-    private void updatePlayPauseButton() {
-        if (!isVisible() || !isAttachedToWindow) {
-            return;
-        }
+    public void updatePlayPauseButton() {
+//        if (!isVisible() || !isAttachedToWindow) {
+//            Log.d("In herre","inside");
+//            return;
+//        }
         boolean playing = player != null && player.getPlayWhenReady();
         String contentDescription = getResources().getString(
                 playing ? com.google.android.exoplayer2.R.string.exo_controls_pause_description : com.google.android.exoplayer2.R.string.exo_controls_play_description);
         playButton.setContentDescription(contentDescription);
+        if(playing)
+            Log.d("PLAY","PLAY");
+        else
+            Log.d("Pause","PAUSE");
         playButton.setImageResource(
                 playing ? R.drawable.pausecontrol : R.drawable.playcontrol);
     }

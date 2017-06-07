@@ -35,7 +35,7 @@ public class CustomExoPlayerView extends FrameLayout {
     private final View shutterView;
     private final SubtitleView subtitleLayout;
     private final AspectRatioFrameLayout layout;
-    private final CustomPlaybackControlView controller;
+    public final CustomPlaybackControlView controller;
     private final CustomExoPlayerView.ComponentListener componentListener;
 
     private SimpleExoPlayer player;
@@ -264,7 +264,6 @@ public class CustomExoPlayerView extends FrameLayout {
         return true;
     }
 
-    @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         return useController ? controller.dispatchKeyEvent(event) : super.dispatchKeyEvent(event);
     }
