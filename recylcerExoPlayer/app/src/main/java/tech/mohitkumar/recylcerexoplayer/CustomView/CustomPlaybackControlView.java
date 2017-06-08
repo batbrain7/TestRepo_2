@@ -53,10 +53,10 @@ public class CustomPlaybackControlView extends FrameLayout {
     public static final int PROGRESS_BAR_MAX = 1000;
     private static final long MAX_POSITION_FOR_SEEK_TO_PREVIOUS = 3000;
 
-    private final CustomPlaybackControlView.ComponentListener componentListener;
+    public CustomPlaybackControlView.ComponentListener componentListener;
     private final ImageView playButton;
     private final TextView timeCurrent;
-    private final SeekBar progressBar;
+    public SeekBar progressBar;
     private final StringBuilder formatBuilder;
     private final Formatter formatter;
     private final Timeline.Window currentWindow;
@@ -467,7 +467,7 @@ public class CustomPlaybackControlView extends FrameLayout {
         return true;
     }
 
-    private final class ComponentListener implements ExoPlayer.EventListener,
+    public class ComponentListener implements ExoPlayer.EventListener,
             SeekBar.OnSeekBarChangeListener, OnClickListener {
 
         @Override

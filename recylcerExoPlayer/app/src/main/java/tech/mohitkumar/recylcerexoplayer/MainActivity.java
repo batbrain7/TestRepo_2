@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.AbsListView;
-import android.widget.Toast;
 
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.Timeline;
@@ -20,6 +18,7 @@ import com.google.android.exoplayer2.upstream.DataSource;
 import java.util.ArrayList;
 
 import tech.mohitkumar.recylcerexoplayer.Adapters.RecyclerVideoAdapter;
+import tech.mohitkumar.recylcerexoplayer.Interface.VideoFinished;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity{
     DefaultTrackSelector trackSelector;
 
     RecyclerView recyclerView;
-    RecyclerView.Adapter adapter;
+    RecyclerVideoAdapter adapter;
     RecyclerView.LayoutManager layoutManager;
 
     ArrayList<String> arraylist = new ArrayList<String>();
@@ -60,6 +59,13 @@ public class MainActivity extends AppCompatActivity{
         adapter = new RecyclerVideoAdapter(arraylist,getApplicationContext());
         recyclerView.setAdapter(adapter);
 
+        adapter.setVideoFinished(new VideoFinished() {
+            @Override
+            public void onVideoFinished() {
+                Log.d("TAG","GOT THE CALLBACk");
+
+            }
+        });
 
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             public boolean top;
