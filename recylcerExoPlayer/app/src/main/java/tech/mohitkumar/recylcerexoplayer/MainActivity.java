@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onVideoFinished() {
                 Log.d("TAG","GOT THE CALLBACk");
-
+                recyclerView.smoothScrollToPosition(recyclerView.getChildCount()+1);
             }
         });
 
