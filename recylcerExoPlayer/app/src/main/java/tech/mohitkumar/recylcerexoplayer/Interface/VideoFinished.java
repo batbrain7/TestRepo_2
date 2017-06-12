@@ -5,5 +5,6 @@ package tech.mohitkumar.recylcerexoplayer.Interface;
  */
 
 public interface VideoFinished {
-    void onVideoFinished();
+    void onVideoFinished(int position);
+    void onInteraction(int position);
 }
