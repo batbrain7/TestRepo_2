@@ -1,76 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="310dp">
+    android:layout_height="366dp">
+
+    <!--<android.support.v7.widget.CardView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="360dp"-->
+        <!--android:layout_margin="5dp"-->
+        <!--&gt;-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical"-->
+            <!--android:background="#fff"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--&gt;-->
+        <!--<tech.mohitkumar.recylcerexoplayer.CustomView.CustomExoPlayerView-->
+            <!--android:id="@+id/player_view_card"-->
+            <!--android:focusable="true"-->
+            <!--android:background="#000"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_height="0dp"/>-->
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:text="Name of the Video"-->
+                <!--android:id="@+id/name_card"-->
+                <!--android:textColor="#000"-->
+                <!--android:textAppearance="?android:textAppearanceLarge"-->
+                <!--/>-->
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="2dp"-->
+                <!--android:background="#b4ada6"-->
+                <!--&gt;-->
+            <!--</View>-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal"-->
+                <!--&gt;-->
+                <!--<ImageView-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:id="@+id/heart"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:src="@drawable/hearts"-->
+                    <!--/>-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/no_likes"-->
+                    <!--android:text="344"-->
+                    <!--android:textSize="20dp"-->
+                    <!--android:textColor="#000"-->
+                    <!--android:layout_marginLeft="7dp"-->
+                    <!--android:paddingTop="5dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--/>-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Comments"-->
+                    <!--android:textSize="20dp"-->
+                    <!--android:textColor="#000"-->
+                    <!--/>-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:id="@+id/comment_id"-->
+                    <!--/>-->
+            <!--</LinearLayout>-->
+        <!--</LinearLayout>-->
+    <!--</android.support.v7.widget.CardView>-->
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="295dp"
-        android:layout_margin="5dp"
+        android:layout_height="340dp"
         >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="#fff"
-            android:paddingBottom="10dp"
+            android:padding="5dp"
             >
-        <tech.mohitkumar.recylcerexoplayer.CustomView.CustomExoPlayerView
-            android:id="@+id/player_view_card"
-            android:focusable="true"
-            android:background="#000"
-            android:layout_width="match_parent"
-            android:layout_height="215dp"/>
+            <tech.mohitkumar.recylcerexoplayer.CustomView.CustomExoPlayerView
+                android:id="@+id/player_view_card"
+                android:focusable="true"
+                android:background="#000"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="Name of the Video"
-                android:id="@+id/name_card"
-                android:textColor="#000"
+                android:text="Bunny Video"
+                android:padding="5dp"
+                android:textColor="#4747b2"
+                android:id="@+id/name_vid"
                 android:textAppearance="?android:textAppearanceLarge"
                 />
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#b4ada6"
-                >
-            </View>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 >
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:id="@+id/heart"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:id="@+id/tag1"
+                    android:textColor="#be2337"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:text="#RelationShip"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#b1951c"
+                    android:textStyle="bold"
+                    android:text="#Girls"
                     android:layout_marginLeft="10dp"
+                    android:id="@+id/tag2"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/time_elapsed"
+                    android:layout_marginLeft="5dp"
+                    android:text="30 min ago"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/no_views"
+                    android:text="79 Views"
+                    android:layout_marginLeft="20dp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/lik_btn"
                     android:src="@drawable/hearts"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="23"
+                    android:layout_marginLeft="5dp"
                     android:id="@+id/no_likes"
-                    android:text="344"
-                    android:textSize="20dp"
-                    android:textColor="#000"
-                    android:layout_marginLeft="7dp"
-                    android:paddingTop="5dp"
-                    android:layout_weight="1"
                     />
                 <TextView
+                    android:layout_marginLeft="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Comments"
                     android:textSize="20dp"
+                    android:text="H4U"
+                    android:id="@+id/h4u"
                     android:textColor="#000"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/no_h4u"
+                    android:text="125"
+                    android:layout_marginLeft="5dp"
+                    />
+                <ImageView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/reply"
+                    />
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/no_reply"
+                    android:text="10"
+                    />
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/share_btn"
+                    android:layout_marginLeft="20dp"
+                    />
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
                     android:layout_weight="1"
-                    android:id="@+id/comment_id"
+                    ></View>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/down_btn"
+                    android:layout_marginRight="10dp"
                     />
             </LinearLayout>
         </LinearLayout>

@@ -67,9 +67,9 @@ public class RecyclerSimpleAdapter extends RecyclerView.Adapter<RecyclerSimpleAd
 
         //videoFinished.onInteraction(position);
 
-        holder.comments.setText(s.getComments());
-        holder.name.setText(s.getName());
-        holder.likes.setText(s.getLikes());
+//        holder.comments.setText(s.getComments());
+//        holder.name.setText(s.getName());
+//        holder.likes.setText(s.getLikes());
 
         holder.name.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -173,11 +173,11 @@ public class RecyclerSimpleAdapter extends RecyclerView.Adapter<RecyclerSimpleAd
             super(itemView);
             this.list = list;
             this.context = context;
-            this.likes = (TextView) itemView.findViewById(R.id.no_likes);
-            this.comments = (TextView) itemView.findViewById(R.id.comment_id);
+//            this.likes = (TextView) itemView.findViewById(R.id.no_likes);
+//            this.comments = (TextView) itemView.findViewById(R.id.comment_id);
             this.customExoPlayerView = (CustomExoPlayerView) itemView.findViewById(R.id.player_view_card);
-            this.name = (TextView) itemView.findViewById(R.id.name_card);
-            this.heart = (ImageView) itemView.findViewById(R.id.heart);
+            this.name = (TextView) itemView.findViewById(R.id.name_vid);
+//            this.heart = (ImageView) itemView.findViewById(R.id.heart);
         }
     }
 }

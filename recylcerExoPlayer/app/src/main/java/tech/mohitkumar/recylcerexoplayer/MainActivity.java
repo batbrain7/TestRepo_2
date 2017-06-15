@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SnapHelper;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -23,6 +24,7 @@ import com.google.android.exoplayer2.upstream.DataSource;
 import java.util.ArrayList;
 
 import tech.mohitkumar.recylcerexoplayer.Adapters.RecyclerVideoAdapter;
+import tech.mohitkumar.recylcerexoplayer.CustomView.CustomExoPlayerView;
 import tech.mohitkumar.recylcerexoplayer.CustomView.SnappingRecyclerView;
 import tech.mohitkumar.recylcerexoplayer.Interface.VideoFinished;
 
@@ -97,18 +99,41 @@ public class MainActivity extends AppCompatActivity{
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
 
+
                 LinearLayoutManager layoutManager = ((LinearLayoutManager) recyclerView
                         .getLayoutManager());
 
-                layoutManager.findLastCompletelyVisibleItemPosition();
+                int firstItemPos=layoutManager.findFirstVisibleItemPosition();
+                View firstItemView=layoutManager.findViewByPosition(firstItemPos);
+                int lastItemPos=layoutManager.findLastVisibleItemPosition();
+                View lastItemView=layoutManager.findViewByPosition(lastItemPos);
+                CustomExoPlayerView customExoPlayerView = (CustomExoPlayerView) lastItemView.findViewById(R.id.player_view);
+                CustomExoPlayerView customExoPlayerView1 = (CustomExoPlayerView) firstItemView.findViewById(R.id.player_view);
 
                 if (top) {
-                    int index = layoutManager.findFirstVisibleItemPosition();
-                    recyclerView.smoothScrollToPosition(index);
+                    double perc2 = Math.abs(lastItemView.getY()) / lastItemView.getHeight();
+                    Log.d("PERC2",Double.toString(perc2));
+                    if(perc2 > 0.3) {
+
+                        customExoPlayerView.controller.dispatchKeyEvent(KeyEvent.KEYCODE_MEDIA_PAUSE);
+                        Log.d("P1Called","PAUSED");
+                        int index = layoutManager.findFirstVisibleItemPosition();
+                        recyclerView.smoothScrollToPosition(index);
+                        customExoPlayerView1.controller.dispatchKeyEvent(KeyEvent.KEYCODE_MEDIA_PLAY);
+                        Log.d("P1Called","PLAYING");
+                    }
 
                 } else {
-                    int index = layoutManager.findLastVisibleItemPosition();
-                    recyclerView.smoothScrollToPosition(index);
+                    double perc1 = Math.abs(firstItemView.getY()) / firstItemView.getHeight();
+                    Log.d("PERC1",Double.toString(perc1));
+                    if(perc1 > 0.3) {
+                        customExoPlayerView1.controller.dispatchKeyEvent(KeyEvent.KEYCODE_MEDIA_PAUSE);
+                        Log.d("P2Called","PAUSED");
+                        int index = layoutManager.findLastVisibleItemPosition();
+                        recyclerView.smoothScrollToPosition(index);
+                        customExoPlayerView.controller.dispatchKeyEvent(KeyEvent.KEYCODE_MEDIA_PLAY);
+                        Log.d("P2Called","PLAYING");
+                    }
                 }
 
             }
@@ -117,6 +142,7 @@ public class MainActivity extends AppCompatActivity{
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
 
+              //  Log.d("DY",Integer.toString(dy));
                 if (dy > 0) {
                     top = false;
                 } else {

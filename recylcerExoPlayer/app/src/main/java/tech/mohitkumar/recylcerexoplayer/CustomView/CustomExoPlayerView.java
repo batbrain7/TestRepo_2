@@ -297,7 +297,7 @@ public class CustomExoPlayerView extends FrameLayout {
         @Override
         public void onVideoSizeChanged(int width, int height, int unappliedRotationDegrees,
                                        float pixelWidthHeightRatio) {
-            layout.setAspectRatio(height == 0 ? 1 : (width * pixelWidthHeightRatio) / height);
+            //layout.setAspectRatio(height == 0 ? 1 : (width * pixelWidthHeightRatio) / height);
         }
 
         @Override
